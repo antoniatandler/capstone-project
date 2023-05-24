@@ -5,8 +5,10 @@ export default function WelcomeMessage() {
     <>
       <Heading />
       <div className="welcome">
-        <h2>MOINI</h2>
-        <p>nice to meet you here!</p>
+        <p>YOGA TAKES YOU INTO THE PRESENT MOMENT.</p>
+        <p>
+          THE <span id="onlyplace">ONLY PLACE</span> WHERE LIFE EXISTS.
+        </p>
       </div>
     </>
   );
