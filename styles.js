@@ -81,5 +81,3 @@ export default createGlobalStyle`
 
 
 `;
-
-// #00a0a0 darker petrol
