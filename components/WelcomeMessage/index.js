@@ -6,6 +6,7 @@ export const Welcome = styled.text`
   position: absolute;
   top: 50%;
   left: 50%;
+  tranform: translate(-50%, -50%);
   padding-top: 15px;
   border: dotted;
   padding-left: 15px;
@@ -20,7 +21,6 @@ export const Welcome = styled.text`
   text-align: center;
   align-items: center;
   border-radius: 50px;
-  margin-top: 20px;
 `;
 
 export default function WelcomeMessage() {
@@ -28,14 +28,24 @@ export default function WelcomeMessage() {
     <>
       <Heading />
       <div>
-        <Welcome>
-          <p>YOGA TAKES YOU INTO THE PRESENT MOMENT.</p>
+        <div
+          style={{
+            zIndex: -1,
+            position: "fixed",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
           <Image
             src="/pictures/succulente.jpeg"
             alt="picture of a succulent"
-            height={150}
-            width={200}
+            height={350}
+            width={400}
           />
+        </div>
+        <Welcome>
+          <p>YOGA TAKES YOU INTO THE PRESENT MOMENT.</p>
           <p>
             THE <span id="onlyplace">ONLY PLACE</span> WHERE LIFE EXISTS.
           </p>
