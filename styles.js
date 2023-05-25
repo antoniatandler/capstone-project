@@ -52,26 +52,6 @@ export default createGlobalStyle`
     padding-top: 20px;
   }
 
-  .welcome {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding-top: 15px;
-    border: dotted;
-    padding-left: 15px;
-    padding-right: 15px;
-    background-color: #dbf3e1;
-    color: #dbb290;
-    border-radius: 100%;
-    letter-spacing: 5px;
-    font-size: 32px;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    text-align: center;
-    align-items: center;
-    border-radius: 50px;
-  }
-
   .poses {
   align-content: center;
    text-align: center;
