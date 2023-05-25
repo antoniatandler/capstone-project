@@ -22,6 +22,24 @@ export const Welcome = styled.text`
   align-items: center;
   border-radius: 50px;
 `;
+export const Features = styled.div`
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  margin: auto;
+`;
+
+export const FeatureButton = styled.button`
+  background-color: #dbb290;
+  border: 5px bold #dbb290;
+  height: 40px;
+  width: 45%;
+  padding: 5px;
+  margin: 5px;
+  gap: 10px;
+  color: #dbf3e1;
+  border-radius: 20px;
+`;
 
 export default function WelcomeMessage() {
   return (
@@ -51,6 +69,15 @@ export default function WelcomeMessage() {
           </p>
         </Welcome>
       </div>
+
+      <Features>
+        <FeatureButton>All Yoga Poses</FeatureButton>
+        <FeatureButton>Feature 2</FeatureButton>
+        <FeatureButton>Feature 3</FeatureButton>
+        <FeatureButton>Feature 4</FeatureButton>
+        <FeatureButton>Feature 5</FeatureButton>
+        <FeatureButton>Feature 6</FeatureButton>
+      </Features>
     </>
   );
 }
