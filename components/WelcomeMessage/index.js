@@ -1,5 +1,6 @@
 import Heading from "../Heading";
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Welcome = styled.text`
   position: absolute;
@@ -13,12 +14,13 @@ export const Welcome = styled.text`
   color: #dbb290;
   border-radius: 100%;
   letter-spacing: 5px;
-  font-size: 32px;
+  font-size: 20px;
   transform: translate(-50%, -50%);
-  width: 60%;
+  width: 70%;
   text-align: center;
   align-items: center;
   border-radius: 50px;
+  margin-top: 20px;
 `;
 
 export default function WelcomeMessage() {
@@ -28,6 +30,12 @@ export default function WelcomeMessage() {
       <div>
         <Welcome>
           <p>YOGA TAKES YOU INTO THE PRESENT MOMENT.</p>
+          <Image
+            src="/pictures/succulente.jpeg"
+            alt="picture of a succulent"
+            height={150}
+            width={200}
+          />
           <p>
             THE <span id="onlyplace">ONLY PLACE</span> WHERE LIFE EXISTS.
           </p>
