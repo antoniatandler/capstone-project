@@ -1,6 +1,7 @@
 import Heading from "../Heading";
 import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Welcome = styled.text`
   position: absolute;
@@ -71,7 +72,17 @@ export default function WelcomeMessage() {
       </div>
 
       <Features>
-        <FeatureButton>All Yoga Poses</FeatureButton>
+        <FeatureButton>
+          <Link
+            href="../../poses/"
+            style={{
+              textDecoration: "none",
+              color: "#dbf3e1",
+            }}
+          >
+            all yoga poses
+          </Link>
+        </FeatureButton>
         <FeatureButton>Feature 2</FeatureButton>
         <FeatureButton>Feature 3</FeatureButton>
         <FeatureButton>Feature 4</FeatureButton>
