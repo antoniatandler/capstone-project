@@ -5,9 +5,8 @@ import Link from "next/link";
 
 export const Welcome = styled.text`
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  tranform: translate(-50%, -50%);
   padding-top: 15px;
   border: dotted;
   padding-left: 15px;
@@ -17,15 +16,14 @@ export const Welcome = styled.text`
   border-radius: 100%;
   letter-spacing: 5px;
   font-size: 20px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -35%);
   width: 70%;
   text-align: center;
-  align-items: center;
   border-radius: 50px;
 `;
 export const Features = styled.div`
   position: absolute;
-  bottom: 30px;
+  bottom: 0;
   width: 100%;
   margin: auto;
 `;
@@ -52,8 +50,8 @@ export default function WelcomeMessage() {
             zIndex: -1,
             position: "fixed",
             left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
+            top: "40%",
+            transform: "translate(-50%, -40%)",
           }}
         >
           <Image
