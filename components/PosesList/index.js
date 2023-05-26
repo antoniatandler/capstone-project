@@ -15,7 +15,7 @@ export default function PosesList() {
             <h3>
               {english_name}, {sanskrit_name}
             </h3>
-            <img src={url_png}></img>
+            <img src={url_png} alt={english_name}></img>
           </li>
         ))}
       </div>
