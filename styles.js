@@ -72,5 +72,3 @@ export default createGlobalStyle`
     margin: auto;
   }
 `;
-
-// #00a0a0 darker petrol
