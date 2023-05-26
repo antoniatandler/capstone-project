@@ -50,25 +50,4 @@ export default createGlobalStyle`
   h3 {
     padding-top: 20px;
   }
-
-  .poses {
-  align-content: center;
-   text-align: center;
-   font-size: 20px;
-  }
-
- li {
-    list-style: none;
-    text-align: center;
-    background-color: #dbb290;
-    border-radius: 15px;
-    padding-bottom: 20px;
-    height: fit-content;
-    box-shadow: 17px 17px 23px -8px rgba(89,49,31,0.52);
-
-  img {
-    height: 200px;
-    width: 200px;
-    margin: auto;
-  }
 `;
