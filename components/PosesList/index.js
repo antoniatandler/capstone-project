@@ -15,15 +15,31 @@ export const PoseList = styled.li`
 export const PoseImage = styled.img`
   margin: auto;
   padding: auto;
-  heigth: 200px;
-  width: 200px;
 `;
 
-export const Pose = styled.li`
-  list-style: none;
+export const Pose = styled.div`
+  // list-style: none;
   align-content: center;
   text-align: center;
   font-size: 20px;
+`;
+
+export const PosesHeading = styled.h2`
+  text-align: center;
+  margin: auto;
+  text-decoration: underline;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin-bottom: -10px;
+  color: #dbf3e1;
+  font-weight: bold;
+  font-style: inherit;
+  letter-spacing: 1px;
+`;
+
+export const PoseHeading = styled.h3`
+  padding-top: 20px;
 `;
 
 export default function PosesList() {
@@ -32,13 +48,13 @@ export default function PosesList() {
   return (
     <main>
       <Heading />
-      <h2>ALL POSES</h2>
+      <PosesHeading>ALL POSES</PosesHeading>
       <Pose>
         {poses.map(({ id, english_name, sanskrit_name, url_png }) => (
           <PoseList key={id}>
-            <h3>
-              {english_name}, {sanskrit_name}
-            </h3>
+            <PoseHeading>
+              {sanskrit_name} ({english_name})
+            </PoseHeading>
             <PoseImage
               src={url_png}
               alt={english_name}

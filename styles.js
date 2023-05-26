@@ -32,22 +32,4 @@ export default createGlobalStyle`
     border-radius: 15px;
     letter-spacing: 5px;
   }
-
-  h2 {
-    text-align: center;
-    margin: auto;
-    text-decoration: underline;
-    width: 100%;
-    left: 0;
-    right: 0;
-    margin-bottom: -10px;
-    color: #dbf3e1;
-    font-weight: bold;
-    font-style: inherit;
-    letter-spacing: 1px;
-  }
-
-  h3 {
-    padding-top: 20px;
-  }
 `;
