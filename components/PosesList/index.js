@@ -9,7 +9,7 @@ export default function PosesList() {
     <main>
       <Heading />
       <h2>ALL POSES</h2>
-      <div className="poses">
+      <li className="poses">
         {poses.map(({ id, english_name, sanskrit_name, url_png }) => (
           <li key={id}>
             <h3>
@@ -18,7 +18,7 @@ export default function PosesList() {
             <img src={url_png} alt={english_name} />
           </li>
         ))}
-      </div>
+      </li>
     </main>
   );
 }
