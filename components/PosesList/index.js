@@ -3,7 +3,6 @@ import { getAllPoses } from "@/public/lib/poses";
 
 export default function PosesList() {
   const poses = getAllPoses();
-  console.log("all poses:", poses);
 
   return (
     <main>
