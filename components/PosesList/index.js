@@ -17,8 +17,7 @@ export const PoseImage = styled.img`
   padding: auto;
 `;
 
-export const Pose = styled.div`
-  // list-style: none;
+export const PoseContainer = styled.div`
   align-content: center;
   text-align: center;
   font-size: 20px;
