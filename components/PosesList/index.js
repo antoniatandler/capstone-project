@@ -17,7 +17,7 @@ export const PoseImage = styled.img`
   padding: auto;
 `;
 
-export const PoseContainer = styled.div`
+export const Pose = styled.div`
   // list-style: none;
   align-content: center;
   text-align: center;
@@ -49,7 +49,7 @@ export default function PosesList() {
     <main>
       <Heading />
       <PosesHeading>ALL POSES</PosesHeading>
-      <PoseContainer>
+      <Pose>
         {poses.map(({ id, english_name, sanskrit_name, url_png }) => (
           <PoseList key={id}>
             <PoseHeading>
@@ -63,7 +63,7 @@ export default function PosesList() {
             />
           </PoseList>
         ))}
-      </PoseContainer>
+      </Pose>
     </main>
   );
 }
