@@ -38,7 +38,7 @@ export const PosesHeading = styled.h2`
   letter-spacing: 1px;
 `;
 
-export const PoseHeading = styled.h3`
+export const SubHeading = styled.h3`
   padding-top: 20px;
 `;
 
@@ -52,9 +52,9 @@ export default function PosesList() {
       <PoseList>
         {poses.map(({ id, english_name, sanskrit_name, url_png }) => (
           <PoseContainer key={id}>
-            <PoseHeading>
+            <SubHeading>
               {sanskrit_name} ({english_name})
-            </PoseHeading>
+            </SubHeading>
             <PoseImage
               src={url_png}
               alt={english_name}
