@@ -2,7 +2,7 @@ import Heading from "../Heading";
 import { getAllPoses } from "@/public/lib/poses";
 import styled from "styled-components";
 
-export const Pose = styled.li`
+export const PoseContainer = styled.li`
   list-style: none;
   text-align: center;
   background-color: #dbb290;
@@ -18,6 +18,7 @@ export const PoseImage = styled.img`
 `;
 
 export const PoseList = styled.ul`
+  margin-left: -40px;
   align-content: center;
   text-align: center;
   font-size: 20px;
@@ -50,7 +51,7 @@ export default function PosesList() {
       <PosesHeading>ALL POSES</PosesHeading>
       <PoseList>
         {poses.map(({ id, english_name, sanskrit_name, url_png }) => (
-          <Pose key={id}>
+          <PoseContainer key={id}>
             <PoseHeading>
               {sanskrit_name} ({english_name})
             </PoseHeading>
@@ -60,7 +61,7 @@ export default function PosesList() {
               height={200}
               width={200}
             />
-          </Pose>
+          </PoseContainer>
         ))}
       </PoseList>
     </main>
