@@ -1,7 +1,6 @@
 import Heading from "../Heading";
 import styled from "styled-components";
 import Image from "next/image";
-import Link from "next/link";
 
 export const Welcome = styled.text`
   position: absolute;
@@ -20,24 +19,6 @@ export const Welcome = styled.text`
   width: 70%;
   text-align: center;
   border-radius: 50px;
-`;
-export const Features = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin: auto;
-`;
-
-export const FeatureButton = styled.button`
-  background-color: #dbb290;
-  border: 5px bold #dbb290;
-  height: 40px;
-  width: 45%;
-  padding: 5px;
-  margin: 5px;
-  gap: 10px;
-  color: #dbf3e1;
-  border-radius: 20px;
 `;
 
 export default function WelcomeMessage() {
@@ -68,25 +49,6 @@ export default function WelcomeMessage() {
           </p>
         </Welcome>
       </div>
-
-      <Features>
-        <FeatureButton>
-          <Link
-            href="../../poses/"
-            style={{
-              textDecoration: "none",
-              color: "#dbf3e1",
-            }}
-          >
-            all yoga poses
-          </Link>
-        </FeatureButton>
-        <FeatureButton>Feature 2</FeatureButton>
-        <FeatureButton>Feature 3</FeatureButton>
-        <FeatureButton>Feature 4</FeatureButton>
-        <FeatureButton>Feature 5</FeatureButton>
-        <FeatureButton>Feature 6</FeatureButton>
-      </Features>
     </>
   );
 }
