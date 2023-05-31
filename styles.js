@@ -14,5 +14,4 @@ export default createGlobalStyle`
     margin-top: 100px;
     padding: 15px;
     color: #59311f;
-      
   }`;
