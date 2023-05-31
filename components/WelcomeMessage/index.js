@@ -2,7 +2,7 @@ import Heading from "../Heading";
 import styled from "styled-components";
 import Image from "next/image";
 
-export const Welcome = styled.p`
+export const WelcomeParagraph = styled.p`
   position: absolute;
   top: 40%;
   left: 50%;
@@ -15,7 +15,7 @@ export const Welcome = styled.p`
   border-radius: 100%;
   letter-spacing: 5px;
   font-size: 20px;
-  transform: translate(-50%, -35%);
+  transform: translate(-50%, -40%);
   width: 70%;
   text-align: center;
   border-radius: 50px;
@@ -43,16 +43,14 @@ export default function WelcomeMessage() {
     <>
       <Heading />
       <StyledDiv>
-        <div>
-          <StyledImage
-            src="/pictures/succulente.jpeg"
-            alt="picture of a succulent"
-          />
-        </div>
-        <Welcome>
+        <StyledImage
+          src="/pictures/succulente.jpeg"
+          alt="picture of a succulent"
+        />
+        <WelcomeParagraph>
           YOGA TAKES YOU INTO THE PRESENT MOMENT. THE{" "}
           <StyledSpan>ONLY PLACE</StyledSpan> WHERE LIFE EXISTS.
-        </Welcome>
+        </WelcomeParagraph>
       </StyledDiv>
     </>
   );
