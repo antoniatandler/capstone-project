@@ -22,19 +22,18 @@ export const FeatureButton = styled.button`
   border-radius: 20px;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #dbf3e1;
+`;
+
 export default function HomePage() {
   return (
     <>
       <Heading />
       <WelcomeMessage />
       <Features>
-        <Link
-          href="../../poses/"
-          style={{
-            textDecoration: "none",
-            color: "#dbf3e1",
-          }}
-        >
+        <Link href="../../poses/">
           <FeatureButton>all yoga poses</FeatureButton>
         </Link>
 
