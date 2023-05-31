@@ -19,5 +19,5 @@ const MainHeading = styled.h1`
 `;
 
 export default function Heading() {
-  return <h1>ANTONYOGA</h1>;
+  return <MainHeading>ANTONYOGA</MainHeading>;
 }
