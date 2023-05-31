@@ -2,7 +2,7 @@ import Heading from "../Heading";
 import styled from "styled-components";
 import Image from "next/image";
 
-export const Welcome = styled.text`
+export const Welcome = styled.p`
   position: absolute;
   top: 40%;
   left: 50%;
@@ -21,34 +21,39 @@ export const Welcome = styled.text`
   border-radius: 50px;
 `;
 
+export const StyledImage = styled.img`
+  height: 350px;
+  width: 400px;
+`;
+
+export const StyledSpan = styled.span`
+  text-decoration: underline;
+`;
+
+export const StyledDiv = styled.div`
+  zindex: -1;
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -40%);
+`;
+
 export default function WelcomeMessage() {
   return (
     <>
       <Heading />
-      <div>
-        <div
-          style={{
-            zIndex: -1,
-            position: "fixed",
-            left: "50%",
-            top: "40%",
-            transform: "translate(-50%, -40%)",
-          }}
-        >
-          <Image
+      <StyledDiv>
+        <div>
+          <StyledImage
             src="/pictures/succulente.jpeg"
             alt="picture of a succulent"
-            height={350}
-            width={400}
           />
         </div>
         <Welcome>
-          <p>YOGA TAKES YOU INTO THE PRESENT MOMENT.</p>
-          <p>
-            THE <span id="onlyplace">ONLY PLACE</span> WHERE LIFE EXISTS.
-          </p>
+          YOGA TAKES YOU INTO THE PRESENT MOMENT. THE{" "}
+          <StyledSpan>ONLY PLACE</StyledSpan> WHERE LIFE EXISTS.
         </Welcome>
-      </div>
+      </StyledDiv>
     </>
   );
 }
