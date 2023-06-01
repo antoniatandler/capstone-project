@@ -44,17 +44,28 @@ export const SubHeading = styled.h3`
 `;
 
 export const PoseDescription = styled.p`
-  margin: 30px;
+  margin: 15px;
+  background-color: rgba(219, 243, 225, 0.5);
+  border-radius: 15px;
+  padding: 15px;
 `;
 
 export const PoseBenefits = styled.p`
-  margin: 30px;
+  margin: 15px;
+  background-color: rgba(219, 243, 225, 0.5);
+  border-radius: 15px;
+  padding: 15px;
 `;
 
 export const BackButton = styled.button`
   width: 30%;
   position: relative;
   margin-left: 35%;
+  background-color: rgba(219, 243, 225);
+  border: 2px bold #59311f;
+  color: #59311f;
+  box-shadow: 17px 17px 23px -8px rgba(89, 49, 31, 0.52);
+  border-radius: 5px;
 `;
 
 export const DetailsHeading = styled.h4`
