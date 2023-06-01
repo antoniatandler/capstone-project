@@ -1,6 +1,7 @@
 import Heading from "../Heading";
-import { getAllPoses } from "@/public/lib/poses";
 import styled from "styled-components";
+import Link from "next/link";
+import { poses } from "@/public/lib/poses";
 
 export const PoseContainer = styled.li`
   list-style: none;
@@ -43,25 +44,30 @@ export const SubHeading = styled.h3`
 `;
 
 export default function PosesList() {
-  const poses = getAllPoses();
-
   return (
     <main>
       <Heading />
       <PosesHeading>ALL POSES</PosesHeading>
       <PoseList>
         {poses.map(({ id, english_name, sanskrit_name, url_png }) => (
-          <PoseContainer key={id}>
-            <SubHeading>
-              {sanskrit_name} ({english_name})
-            </SubHeading>
-            <PoseImage
-              src={url_png}
-              alt={english_name}
-              height={200}
-              width={200}
-            />
-          </PoseContainer>
+          <Link
+            href={`/poses/${id}`}
+            key={id}
+            style={{ textDecoration: "none", color: "#59311f" }}
+          >
+            <PoseContainer>
+              <SubHeading>
+                {sanskrit_name}
+                <br />({english_name})
+              </SubHeading>
+              <PoseImage
+                src={url_png}
+                alt={english_name}
+                height={200}
+                width={200}
+              />
+            </PoseContainer>
+          </Link>
         ))}
       </PoseList>
     </main>
