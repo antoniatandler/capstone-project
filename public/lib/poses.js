@@ -1,4 +1,4 @@
-const poses = [
+export const poses = [
   {
     _id: {
       $oid: "64673b604437f1ce63570f14",
@@ -940,11 +940,3 @@ const poses = [
       "https://www.dropbox.com/s/d1dbdvo4l7xry4w/downdogflip.svg?raw=1",
   },
 ];
-
-export function getAllPoses() {
-  return poses;
-}
-
-export function getPoseById(id) {
-  return poses.find((pose) => pose.id === id);
-}
