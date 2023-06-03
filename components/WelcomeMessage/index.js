@@ -41,14 +41,13 @@ export const StyledDiv = styled.div`
 export default function WelcomeMessage() {
   return (
     <>
-      <Heading />
       <StyledDiv>
         <StyledImage
           src="/pictures/succulente.jpeg"
           alt="picture of a succulent"
         />
         <WelcomeParagraph>
-          YOGA TAKES YOU INTO THE PRESENT MOMENT. THE{" "}
+          YOGA TAKES YOU INTO THE PRESENT MOMENT. THE
           <StyledSpan>ONLY PLACE</StyledSpan> WHERE LIFE EXISTS.
         </WelcomeParagraph>
       </StyledDiv>
