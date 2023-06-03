@@ -37,6 +37,7 @@ export const PosesHeading = styled.h2`
   font-weight: bold;
   font-style: inherit;
   letter-spacing: 1px;
+  margin-top: 40px;
 `;
 
 export const SubHeading = styled.h3`
@@ -46,7 +47,6 @@ export const SubHeading = styled.h3`
 export default function PosesList() {
   return (
     <main>
-      <Heading />
       <PosesHeading>ALL POSES</PosesHeading>
       <PoseList>
         {poses.map(({ id, english_name, sanskrit_name, url_png }) => (
