@@ -14,37 +14,6 @@ export const PoseContainer = styled.li`
   box-shadow: 17px 17px 23px -8px rgba(89, 49, 31, 0.52);
 `;
 
-// export const PoseImage = styled.img`
-//   margin: auto;
-//   padding: auto;
-// `;
-
-// export const PoseList = styled.ul`
-//   margin-left: -40px;
-//   align-content: center;
-//   text-align: center;
-//   font-size: 20px;
-// `;
-
-// export const PosesHeading = styled.h2`
-//   text-align: center;
-//   margin: auto;
-//   text-decoration: underline;
-//   width: 100%;
-//   left: 0;
-//   right: 0;
-//   margin-bottom: -10px;
-//   color: #dbf3e1;
-//   font-weight: bold;
-//   font-style: inherit;
-//   letter-spacing: 1px;
-//   margin-top: 40px;
-// `;
-
-// export const SubHeading = styled.h3`
-//   padding-top: 20px;
-// `;
-
 export const PoseDescription = styled.p`
   margin: 15px;
   background-color: rgba(219, 243, 225, 0.5);

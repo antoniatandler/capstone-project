@@ -1,4 +1,3 @@
-import Heading from "../Heading";
 import styled from "styled-components";
 import Link from "next/link";
 import { poses } from "@/public/lib/poses";
@@ -32,7 +31,6 @@ export const PosesHeading = styled.h2`
   width: 100%;
   left: 0;
   right: 0;
-  margin-bottom: -10px;
   color: #dbf3e1;
   font-weight: bold;
   font-style: inherit;

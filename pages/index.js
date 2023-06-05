@@ -5,8 +5,7 @@ import Link from "next/link";
 
 export const Features = styled.div`
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  bottom: 10px;
   margin: auto;
 `;
 
@@ -33,9 +32,9 @@ export default function HomePage() {
       <Heading />
       <WelcomeMessage />
       <Features>
-        <Link href="../../poses/">
+        <StyledLink href="../../poses/">
           <FeatureButton>all yoga poses</FeatureButton>
-        </Link>
+        </StyledLink>
 
         <FeatureButton>Feature 2</FeatureButton>
         <FeatureButton>Feature 3</FeatureButton>
