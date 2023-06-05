@@ -1,28 +1,53 @@
 import styled from "styled-components";
-import HamburgerMenue from "./HamburgerMenue";
+import Link from "next/link";
 
-const MainHeading = styled.h1`
-  padding-top: 15px;
-  text-align: center;
-  border: dotted;
-  font-size: 30px;
-  margin: auto;
+const HeadingContainer = styled.div`
   position: fixed;
-  top: 30px;
-  left: 50%;
-  translate: -50%;
-  background-color: #dbf3e1;
-  width: 70%;
-  color: #dbb290;
-  border-radius: 15px;
-  letter-spacing: 5px;
+  top: 15px;
+  width: 98%;
+`;
+
+const HamburgerModel = styled.div`
+  position: fixed;
+  left: 15px;
+  top: 35px;
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+`;
+const Line = styled.text`
+  width: 98%;
+  height: 2px;
+  background-color: #000;
+  margin: 2px 0;
+  transition: all 0.3s ease-in-out;
+`;
+
+const Antonyoga = styled.h1`
+  font-size: 35px;
+  top: 0;
+  color: #dac9b6;
+  position: fixed;
+  right: 10px;
+  letter-spacing: 8px;
+  padding: 0;
 `;
 
 export default function Heading() {
   return (
     <>
-      <HamburgerMenue />
-      <MainHeading>ANTONYOGA</MainHeading>
+      <HeadingContainer>
+        <Link href="/">
+          <HamburgerModel>
+            <Line />
+            <Line />
+            <Line />
+          </HamburgerModel>
+          <Antonyoga>ANTONYOGA</Antonyoga>
+        </Link>
+      </HeadingContainer>
     </>
   );
 }
