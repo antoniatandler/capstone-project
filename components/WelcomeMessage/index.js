@@ -27,7 +27,7 @@ export const StyledSpan = styled.span`
 `;
 
 export const StyledDiv = styled.div`
-  zindex: -1;
+  z-index: -1;
   position: fixed;
   left: 50%;
   top: 30%;
