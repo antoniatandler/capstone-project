@@ -8,45 +8,44 @@ import { SlEnvolopeLetter } from "react-icons/sl";
 
 const HeadingContainer = styled.div`
   position: fixed;
+  display: flexbox;
+  justify-content: space-between;
   top: 15px;
-  width: 98%;
+  right: 0;
+  left: 15px;
 `;
 
 const HamburgerModel = styled.div`
-  position: fixed;
-  left: 15px;
-  top: 35px;
   display: flex;
   flex-direction: column;
-  width: 30px;
+  width: 25px;
   height: 20px;
   cursor: pointer;
+  justify-content: flex-start;
 `;
-const Line = styled.text`
+const Line = styled.p`
   width: 98%;
   height: 2px;
   background-color: #000;
-  margin: 2px 0;
-  transition: all 0.3s ease-in-out;
+  margin: 2px;
 `;
 
 const Antonyoga = styled.h1`
+  display: flex;
   font-size: 35px;
-  top: 0;
   color: #dac9b6;
-  position: fixed;
-  right: 10px;
   letter-spacing: 8px;
-  padding: 0;
+  padding: 15px;
+  margin-top: -25px;
 `;
 
 const DropdownMenu = styled.ul`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  width: 130px;
+  margin-left: -50px;
   position: absolute;
-  top: 40px;
-  left: -65px;
-  text-align: center;
-  width: 35%;
+  top: 30px;
+  z-index: +1;
 `;
 
 const MenuItem = styled.li`
@@ -56,7 +55,6 @@ const MenuItem = styled.li`
 const BurgerLink = styled(Link)`
   color: black;
   text-decoration: none;
-  z-index: +1;
 `;
 
 const MenuButton = styled.button`
@@ -86,33 +84,31 @@ export default function Heading() {
           <Line />
           <Line />
         </HamburgerModel>
-        <DropdownMenu isOpen={isOpen}>
-          <MenuItem>
-            <MenuButton>
-              <BurgerLink href="/">
-                <BiHomeHeart />
-              </BurgerLink>
-            </MenuButton>
-          </MenuItem>
-          <MenuItem>
-            <MenuButton>
-              <BurgerLink href="/poses">
-                <GrYoga />
-              </BurgerLink>
-            </MenuButton>
-          </MenuItem>
-          <MenuItem>
-            <MenuButton>
-              <BurgerLink href="/contact">
-                <SlEnvolopeLetter />
-              </BurgerLink>
-            </MenuButton>
-          </MenuItem>
-        </DropdownMenu>
-        <Link href="/">
-          <Antonyoga>ANTONYOGA</Antonyoga>
-        </Link>
+        <Antonyoga>ANTONYOGA</Antonyoga>
       </HeadingContainer>
+      <DropdownMenu isOpen={isOpen}>
+        <MenuItem>
+          <MenuButton>
+            <BurgerLink href="/">
+              <BiHomeHeart />
+            </BurgerLink>
+          </MenuButton>
+        </MenuItem>
+        <MenuItem>
+          <MenuButton>
+            <BurgerLink href="/poses">
+              <GrYoga />
+            </BurgerLink>
+          </MenuButton>
+        </MenuItem>
+        {/* <MenuItem>
+          <MenuButton>
+            <BurgerLink href="/contact">
+              <SlEnvolopeLetter />
+            </BurgerLink>
+          </MenuButton>
+        </MenuItem> */}
+      </DropdownMenu>
     </>
   );
 }
