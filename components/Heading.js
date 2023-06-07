@@ -1,5 +1,13 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { useState } from "react";
+import { FeatureButton } from "@/pages";
+import { ImHome } from "react-icons/im";
+import { GrYoga } from "react-icons/gr";
+import { GiLoveLetter } from "react-icons/gi";
+import { BsFillHouseDoorFill } from "react-icons/bs";
+import { BiHomeHeart } from "react-icons/bi";
+import { SlEnvolopeLetter } from "react-icons/sl";
 
 const HeadingContainer = styled.div`
   position: fixed;
@@ -35,16 +43,68 @@ const Antonyoga = styled.h1`
   padding: 0;
 `;
 
+const DropdownMenu = styled.ul`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  position: absolute;
+  top: 40px;
+  left: -65px;
+  text-align: center;
+  width: 35%;
+`;
+
+const MenuItem = styled.li`
+  list-style: none;
+`;
+
+const BurgerLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+  z-index: +1;
+`;
+
+const MenuButton = styled(FeatureButton)`
+  background-color: rgba(219, 243, 225, 0.5);
+`;
+
 export default function Heading() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <HeadingContainer>
+        <HamburgerModel onClick={toggleMenu}>
+          <Line />
+          <Line />
+          <Line />
+        </HamburgerModel>
+        <DropdownMenu isOpen={isOpen}>
+          <MenuItem>
+            <MenuButton>
+              <BurgerLink href="/">
+                <BiHomeHeart />
+              </BurgerLink>
+            </MenuButton>
+          </MenuItem>
+          <MenuItem>
+            <MenuButton>
+              <BurgerLink href="/poses">
+                <GrYoga />
+              </BurgerLink>
+            </MenuButton>
+          </MenuItem>
+          <MenuItem>
+            <MenuButton>
+              <BurgerLink href="/contact">
+                <SlEnvolopeLetter />
+              </BurgerLink>
+            </MenuButton>
+          </MenuItem>
+        </DropdownMenu>
         <Link href="/">
-          <HamburgerModel>
-            <Line />
-            <Line />
-            <Line />
-          </HamburgerModel>
           <Antonyoga>ANTONYOGA</Antonyoga>
         </Link>
       </HeadingContainer>
