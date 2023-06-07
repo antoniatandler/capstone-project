@@ -2,10 +2,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useState } from "react";
 import { FeatureButton } from "@/pages";
-import { ImHome } from "react-icons/im";
 import { GrYoga } from "react-icons/gr";
-import { GiLoveLetter } from "react-icons/gi";
-import { BsFillHouseDoorFill } from "react-icons/bs";
 import { BiHomeHeart } from "react-icons/bi";
 import { SlEnvolopeLetter } from "react-icons/sl";
 
