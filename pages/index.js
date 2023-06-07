@@ -5,7 +5,10 @@ import Link from "next/link";
 
 export const Features = styled.div`
   position: absolute;
-  bottom: 10px;
+  display: flexbox;
+  justify-content: center;
+  bottom: 15px;
+  width: 95%;
   margin: auto;
 `;
 
@@ -13,10 +16,9 @@ export const FeatureButton = styled.button`
   background-color: #dbb290;
   border: 5px bold #dbb290;
   height: 40px;
-  width: 45%;
+  // width: 45%;
   padding: 5px;
   margin: 5px;
-  gap: 10px;
   color: #dbf3e1;
   border-radius: 20px;
 `;
@@ -32,15 +34,12 @@ export default function HomePage() {
       <Heading />
       <WelcomeMessage />
       <Features>
-        <StyledLink href="../../poses/">
+        <StyledLink href="/poses">
           <FeatureButton>all yoga poses</FeatureButton>
         </StyledLink>
-
-        <FeatureButton>Feature 2</FeatureButton>
+        {/* <FeatureButton>Feature 2</FeatureButton>
         <FeatureButton>Feature 3</FeatureButton>
-        <FeatureButton>Feature 4</FeatureButton>
-        <FeatureButton>Feature 5</FeatureButton>
-        <FeatureButton>Feature 6</FeatureButton>
+        <FeatureButton>Feature 4</FeatureButton> */}
       </Features>
     </>
   );
