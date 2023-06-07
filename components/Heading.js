@@ -59,8 +59,16 @@ const BurgerLink = styled(Link)`
   z-index: +1;
 `;
 
-const MenuButton = styled(FeatureButton)`
-  background-color: rgba(219, 243, 225, 0.5);
+const MenuButton = styled.button`
+  background-color: #dac9b6;
+  border: 5px bold #dbb290;
+  height: 40px;
+  width: 45%;
+  padding: 5px;
+  margin: 5px;
+  gap: 10px;
+  color: #dbf3e1;
+  border-radius: 20px;
 `;
 
 export default function Heading() {
