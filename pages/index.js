@@ -14,9 +14,6 @@ export default function HomePage() {
         <FeatureButton variant="primary" href="/poses">
           all yoga poses
         </FeatureButton>
-        {/* <FeatureButton>Feature 2</FeatureButton>
-        <FeatureButton>Feature 3</FeatureButton>
-        <FeatureButton>Feature 4</FeatureButton> */}
       </Features>
     </>
   );

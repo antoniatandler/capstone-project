@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import Link from "next/link";
 import { useState } from "react";
 import { GrYoga } from "react-icons/gr";
 import { BiHomeHeart } from "react-icons/bi";
-import { SlEnvolopeLetter } from "react-icons/sl";
 import { FeatureButton } from "./FeatureButton";
 
 const HeadingContainer = styled.div`
@@ -83,13 +81,6 @@ export default function Heading() {
             <GrYoga />
           </FeatureButton>
         </MenuItem>
-        {/* <MenuItem>
-          <MenuButton>
-            <BurgerLink href="/contact">
-              <SlEnvolopeLetter />
-            </BurgerLink>
-          </MenuButton>
-        </MenuItem> */}
       </DropdownMenu>
     </>
   );
