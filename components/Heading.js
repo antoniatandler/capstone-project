@@ -13,7 +13,7 @@ const HeadingContainer = styled.header`
   left: 15px;
 `;
 
-const HamburgerModel = styled.nav`
+const HamburgerModel = styled.button`
   display: flex;
   flex-direction: column;
   width: 25px;
@@ -21,6 +21,9 @@ const HamburgerModel = styled.nav`
   cursor: pointer;
   justify-content: flex-start;
   margin-top: 10px;
+  padding: 0;
+  background: none;
+  border: 0;
 `;
 
 const Line = styled.div`
@@ -43,7 +46,7 @@ const Antonyoga = styled.h1`
 const DropdownMenu = styled.ul`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   margin-left: -50px;
-  position: absolute;
+  position: fixed;
   top: 30px;
   z-index: +1;
 `;
