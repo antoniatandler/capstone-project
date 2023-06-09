@@ -13,6 +13,6 @@ export default createGlobalStyle`
     background-color: #00a693;
     margin-top: 40px;
     padding: 15px;
-    color: #59311f;
+    color: rgb(43, 24, 15);
   }
 `;

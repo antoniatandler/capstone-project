@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { GrYoga } from "react-icons/gr";
+import { TbYoga } from "react-icons/tb";
 import { BiHomeHeart } from "react-icons/bi";
 import { FeatureButton } from "./FeatureButton";
 
@@ -29,7 +29,7 @@ const HamburgerModel = styled.button`
 const Line = styled.div`
   width: 98%;
   height: 2px;
-  background-color: #000;
+  background-color: rgb(43, 24, 15);
   margin: 2px;
 `;
 
@@ -45,7 +45,7 @@ const Antonyoga = styled.h1`
 
 const DropdownMenu = styled.ul`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-  margin-left: -50px;
+  margin-left: -45px;
   position: fixed;
   top: 30px;
   z-index: +1;
@@ -76,12 +76,12 @@ export default function Heading() {
       <DropdownMenu isOpen={isOpen}>
         <MenuItem>
           <FeatureButton variant="secondary" href="/">
-            <BiHomeHeart />
+            <BiHomeHeart size={16} />
           </FeatureButton>
         </MenuItem>
         <MenuItem>
           <FeatureButton variant="secondary" href="/poses">
-            <GrYoga />
+            <TbYoga size={16} />
           </FeatureButton>
         </MenuItem>
       </DropdownMenu>
