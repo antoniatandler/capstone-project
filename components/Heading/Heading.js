@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { TbYoga } from "react-icons/tb";
 import { BiHomeHeart } from "react-icons/bi";
-import { FeatureButton } from "./FeatureButton";
+import { FeatureButton } from "../FeatureButton";
 
 const HeadingContainer = styled.header`
   position: fixed;
