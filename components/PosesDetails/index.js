@@ -1,4 +1,4 @@
-import Heading from "../Heading";
+import Heading from "../Heading/Heading";
 import Link from "next/link";
 import styled from "styled-components";
 import { poses } from "@/public/lib/poses";
