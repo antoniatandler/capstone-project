@@ -4,7 +4,7 @@ import { GrYoga } from "react-icons/gr";
 import { BiHomeHeart } from "react-icons/bi";
 import { FeatureButton } from "./FeatureButton";
 
-const HeadingContainer = styled.div`
+const HeadingContainer = styled.header`
   position: fixed;
   display: flexbox;
   justify-content: space-between;
@@ -23,7 +23,7 @@ const HamburgerModel = styled.nav`
   margin-top: 10px;
 `;
 
-const Line = styled.p`
+const Line = styled.div`
   width: 98%;
   height: 2px;
   background-color: #000;
