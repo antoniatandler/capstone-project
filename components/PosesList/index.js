@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { poses } from "@/public/lib/poses";
+import { useState } from "react";
 
 export const PoseContainer = styled.li`
   list-style: none;
@@ -42,17 +43,50 @@ export const SubHeading = styled.h3`
   padding-top: 20px;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #59311f;
+`;
+
+export const SearchBarContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-right: 15px;
+`;
+
+export const StyledInput = styled.input`
+  padding-left: 5px;
+`;
+
 export default function PosesList() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  function handleSearchInputChange(event) {
+    setSearchQuery(event.target.value);
+  }
+
+  const filteredPoses = poses.filter(
+    ({ english_name, sanskrit_name }) =>
+      english_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      sanskrit_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <main>
       <PosesHeading>ALL POSES</PosesHeading>
+      <SearchBarContainer>
+        <StyledInput
+          type="text"
+          placeholder="search for poses ..."
+          value={searchQuery}
+          onChange={handleSearchInputChange}
+        />
+      </SearchBarContainer>
       <PoseList>
-        {poses.map(({ id, english_name, sanskrit_name, url_png }) => (
-          <Link
-            href={`/poses/${id}`}
-            key={id}
-            style={{ textDecoration: "none", color: "#59311f" }}
-          >
+        {filteredPoses.map(({ id, english_name, sanskrit_name, url_png }) => (
+          <StyledLink href={`/poses/${id}`} key={id}>
             <PoseContainer>
               <SubHeading>
                 {sanskrit_name}
@@ -65,7 +99,7 @@ export default function PosesList() {
                 width={200}
               />
             </PoseContainer>
-          </Link>
+          </StyledLink>
         ))}
       </PoseList>
     </main>
