@@ -51,13 +51,28 @@ const StyledLink = styled(Link)`
 export const SearchBarContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 15px;
   margin-top: 15px;
-  margin-right: 15px;
 `;
 
 export const StyledInput = styled.input`
-  padding-left: 5px;
+  padding-left: 15px;
+  width: 300px;
+  height: 40px;
+  border-radius: 15px;
+  margin: auto;
+  padding-top: 5px;
+  color: rgb(43, 24, 15);
+  background-color: #dbf3e1;
+  font-family: fantasy;
+  border: 2px solid #00a693;
+
+  &:focus {
+    outline: none;
+
+    box-shadow: 0 0 10px #dbf3e1;
+  }
 `;
 
 export default function PosesList() {
