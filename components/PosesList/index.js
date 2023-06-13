@@ -1,4 +1,3 @@
-import Heading from "../Heading";
 import styled from "styled-components";
 import Link from "next/link";
 import { poses } from "@/public/lib/poses";
@@ -32,11 +31,11 @@ export const PosesHeading = styled.h2`
   width: 100%;
   left: 0;
   right: 0;
-  margin-bottom: -10px;
   color: #dbf3e1;
   font-weight: bold;
   font-style: inherit;
   letter-spacing: 1px;
+  margin-top: 40px;
 `;
 
 export const SubHeading = styled.h3`
@@ -46,7 +45,6 @@ export const SubHeading = styled.h3`
 export default function PosesList() {
   return (
     <main>
-      <Heading />
       <PosesHeading>ALL POSES</PosesHeading>
       <PoseList>
         {poses.map(({ id, english_name, sanskrit_name, url_png }) => (

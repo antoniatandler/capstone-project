@@ -1,31 +1,9 @@
-import Heading from "@/components/Heading";
+import Heading from "@/components/Heading/Heading";
 import WelcomeMessage from "@/components/WelcomeMessage/index.js";
 import styled from "styled-components";
 import Link from "next/link";
-
-export const Features = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin: auto;
-`;
-
-export const FeatureButton = styled.button`
-  background-color: #dbb290;
-  border: 5px bold #dbb290;
-  height: 40px;
-  width: 45%;
-  padding: 5px;
-  margin: 5px;
-  gap: 10px;
-  color: #dbf3e1;
-  border-radius: 20px;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: #dbf3e1;
-`;
+import { Features } from "@/components/Features";
+import { FeatureButton } from "@/components/FeatureButton";
 
 export default function HomePage() {
   return (
@@ -33,15 +11,9 @@ export default function HomePage() {
       <Heading />
       <WelcomeMessage />
       <Features>
-        <Link href="../../poses/">
-          <FeatureButton>all yoga poses</FeatureButton>
-        </Link>
-
-        <FeatureButton>Feature 2</FeatureButton>
-        <FeatureButton>Feature 3</FeatureButton>
-        <FeatureButton>Feature 4</FeatureButton>
-        <FeatureButton>Feature 5</FeatureButton>
-        <FeatureButton>Feature 6</FeatureButton>
+        <FeatureButton variant="primary" href="/poses">
+          all yoga poses
+        </FeatureButton>
       </Features>
     </>
   );

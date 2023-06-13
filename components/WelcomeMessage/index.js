@@ -1,55 +1,60 @@
-import Heading from "../Heading";
 import styled from "styled-components";
 import Image from "next/image";
 
 export const WelcomeParagraph = styled.p`
-  position: absolute;
+  position: relative;
   top: 40%;
   left: 50%;
-  padding-top: 15px;
+  padding: 15px;
   border: dotted;
-  padding-left: 15px;
-  padding-right: 15px;
   background-color: #dbf3e1;
   color: #dbb290;
-  border-radius: 100%;
   letter-spacing: 5px;
   font-size: 20px;
   transform: translate(-50%, -40%);
-  width: 70%;
+  width: 150%;
   text-align: center;
   border-radius: 50px;
 `;
 
-export const StyledImage = styled.img`
-  height: 350px;
-  width: 400px;
+export const StyledImage = styled(Image)`
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
 `;
 
 export const StyledSpan = styled.span`
   text-decoration: underline;
+  letter-spacing: 10px;
 `;
 
 export const StyledDiv = styled.div`
   zindex: -1;
   position: fixed;
   left: 50%;
-  top: 40%;
-  transform: translate(-50%, -40%);
+  top: 30%;
+  transform: translate(-50%, -30%);
+  // width: 95%;
+  height: 50%;
 `;
 
 export default function WelcomeMessage() {
   return (
     <>
-      <Heading />
       <StyledDiv>
         <StyledImage
           src="/pictures/succulente.jpeg"
           alt="picture of a succulent"
+          width={400}
+          height={400}
         />
         <WelcomeParagraph>
-          YOGA TAKES YOU INTO THE PRESENT MOMENT. THE{" "}
-          <StyledSpan>ONLY PLACE</StyledSpan> WHERE LIFE EXISTS.
+          YOGA TAKES YOU INTO THE PRESENT MOMENT. THE
+          <br />
+          <StyledSpan>ONLY PLACE</StyledSpan>
+          <br />
+          WHERE LIFE EXISTS.
         </WelcomeParagraph>
       </StyledDiv>
     </>

@@ -11,8 +11,8 @@ export default createGlobalStyle`
     margin: 0;
     font-family: fantasy;
     background-color: #00a693;
-    margin-top: 100px;
+    margin-top: 40px;
     padding: 15px;
-    color: #59311f;
+    color: rgb(43, 24, 15);
   }
 `;

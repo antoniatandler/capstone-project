@@ -1,4 +1,4 @@
-import Heading from "@/components/Heading";
+import Heading from "@/components/Heading/Heading";
 import PosesList from "@/components/PosesList/index.js";
 
 export default function ListOfYogaPoses() {
