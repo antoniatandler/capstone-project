@@ -9,8 +9,15 @@ const HeadingContainer = styled.header`
   display: flexbox;
   justify-content: space-between;
   top: 15px;
+  margin-top: -15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   right: 0;
   left: 15px;
+  height: 50px;
+  background-color: #00a693;
+  box-shadow: 0px 17px 13px -7px #00a693;
+  margin-left: -15px;
 `;
 
 const HamburgerModel = styled.button`
@@ -24,6 +31,7 @@ const HamburgerModel = styled.button`
   padding: 0;
   background: none;
   border: 0;
+  margin-left: 15px;
 `;
 
 const Line = styled.div`
@@ -47,7 +55,7 @@ const DropdownMenu = styled.ul`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   margin-left: -45px;
   position: fixed;
-  top: 30px;
+  top: 35px;
   z-index: +1;
 `;
 
