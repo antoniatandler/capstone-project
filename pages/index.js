@@ -1,4 +1,4 @@
-import Heading from "@/components/Heading/Heading";
+import Heading from "@/components/Heading";
 import WelcomeMessage from "@/components/WelcomeMessage/index.js";
 import { Features } from "@/components/Features";
 import { FeatureButton } from "@/components/FeatureButton";
