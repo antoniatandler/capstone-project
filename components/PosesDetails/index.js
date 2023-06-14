@@ -1,18 +1,14 @@
-import Heading from "../Heading/Heading";
 import Link from "next/link";
 import styled from "styled-components";
 import { poses } from "@/public/lib/poses";
-import { PosesHeading, PoseList, PoseImage, SubHeading } from "../PosesList";
-
-export const PoseContainer = styled.li`
-  list-style: none;
-  text-align: center;
-  background-color: #dbb290;
-  border-radius: 15px;
-  padding-bottom: 20px;
-  height: fit-content;
-  box-shadow: 17px 17px 23px -8px rgba(89, 49, 31, 0.52);
-`;
+import {
+  PoseContainer,
+  PosesHeading,
+  PoseList,
+  PoseImage,
+  SubHeading,
+} from "../PosesList";
+import FavoriteHeart from "../FavoriteHeart";
 
 export const PoseDescription = styled.p`
   margin: 15px;
@@ -72,6 +68,7 @@ export default function PosesDetails({ id }) {
           <PoseDescription>{pose.pose_description}</PoseDescription>
           <DetailsHeading>how it blesses you:</DetailsHeading>
           <PoseBenefits>{pose.pose_benefits}</PoseBenefits>
+          <FavoriteHeart />
         </PoseContainer>
       </PoseList>
       <Link href="../poses">

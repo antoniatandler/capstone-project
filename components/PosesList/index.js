@@ -14,6 +14,7 @@ export const PoseContainer = styled.li`
   height: fit-content;
   box-shadow: 17px 17px 23px -8px rgba(89, 49, 31, 0.52);
   padding: auto;
+  z-index: 0;
 `;
 
 export const PoseImage = styled.img`
@@ -37,9 +38,11 @@ export const PosesHeading = styled.h2`
   right: 0;
   color: #dbf3e1;
   font-weight: bold;
+  font-size: 35px;
   font-style: inherit;
   letter-spacing: 1px;
   margin-top: 40px;
+  margin-bottom: -7px;
 `;
 
 export const SubHeading = styled.h3`
@@ -104,25 +107,21 @@ export default function PosesList() {
       </SearchBarContainer>
       <PoseList>
         {filteredPoses.map(({ id, english_name, sanskrit_name, url_png }) => (
-          <>
-            <PoseContainer>
-              <StyledLink href={`/poses/${id}`} key={id}>
-                <SubHeading>
-                  {sanskrit_name}
-                  <br />({english_name})
-                </SubHeading>
-              </StyledLink>
-              <StyledLink href={`/poses/${id}`} key={id}>
-                <PoseImage
-                  src={url_png}
-                  alt={english_name}
-                  height={200}
-                  width={200}
-                />
-              </StyledLink>
-              <FavoriteHeart />
-            </PoseContainer>
-          </>
+          <PoseContainer>
+            <StyledLink href={`/poses/${id}`} key={id}>
+              <SubHeading>
+                {sanskrit_name}
+                <br />({english_name})
+              </SubHeading>
+              <PoseImage
+                src={url_png}
+                alt={english_name}
+                height={200}
+                width={200}
+              />
+            </StyledLink>
+            <FavoriteHeart />
+          </PoseContainer>
         ))}
       </PoseList>
     </main>
