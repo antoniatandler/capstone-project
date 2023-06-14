@@ -2,8 +2,10 @@ import styled from "styled-components";
 import Link from "next/link";
 import { poses } from "@/public/lib/poses";
 import { useState } from "react";
+import FavoriteHeart from "../FavoriteHeart/index";
 
 export const PoseContainer = styled.li`
+  position: relative;
   list-style: none;
   text-align: center;
   background-color: #dbb290;
@@ -11,6 +13,7 @@ export const PoseContainer = styled.li`
   padding-bottom: 20px;
   height: fit-content;
   box-shadow: 17px 17px 23px -8px rgba(89, 49, 31, 0.52);
+  padding: auto;
 `;
 
 export const PoseImage = styled.img`
@@ -46,6 +49,7 @@ export const SubHeading = styled.h3`
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: #59311f;
+  cursor: pointer;
 `;
 
 export const SearchBarContainer = styled.div`
@@ -70,7 +74,6 @@ export const StyledInput = styled.input`
 
   &:focus {
     outline: none;
-
     box-shadow: 0 0 10px #dbf3e1;
   }
 `;
@@ -101,20 +104,25 @@ export default function PosesList() {
       </SearchBarContainer>
       <PoseList>
         {filteredPoses.map(({ id, english_name, sanskrit_name, url_png }) => (
-          <StyledLink href={`/poses/${id}`} key={id}>
+          <>
             <PoseContainer>
-              <SubHeading>
-                {sanskrit_name}
-                <br />({english_name})
-              </SubHeading>
-              <PoseImage
-                src={url_png}
-                alt={english_name}
-                height={200}
-                width={200}
-              />
+              <StyledLink href={`/poses/${id}`} key={id}>
+                <SubHeading>
+                  {sanskrit_name}
+                  <br />({english_name})
+                </SubHeading>
+              </StyledLink>
+              <StyledLink href={`/poses/${id}`} key={id}>
+                <PoseImage
+                  src={url_png}
+                  alt={english_name}
+                  height={200}
+                  width={200}
+                />
+              </StyledLink>
+              <FavoriteHeart />
             </PoseContainer>
-          </StyledLink>
+          </>
         ))}
       </PoseList>
     </main>
