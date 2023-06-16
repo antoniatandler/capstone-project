@@ -7,13 +7,10 @@ For me, yoga is about focusing completely on your own sensation in the present m
 So I developed a yoga app that focuses on one thing: the poses.  
 
 ## Get flexy with me 🤸🏼‍♀️
-
-## Description 
 <img width="170" alt="Bildschirmfoto 2023-06-16 um 06 32 39" src="https://github.com/antoniatandler/capstone-project/assets/128368770/468a7206-13da-406a-8fc0-142c3e8c8443">
 <img width="170" alt="Bildschirmfoto 2023-06-16 um 06 33 12" src="https://github.com/antoniatandler/capstone-project/assets/128368770/6ec14ae4-477e-4ef6-94a2-105f1fb9e9cb">
 <img width="170" alt="Bildschirmfoto 2023-06-16 um 06 34 00" src="https://github.com/antoniatandler/capstone-project/assets/128368770/86a1cbaa-c9e0-4622-9839-fc564bf2bf41">
 <img width="170" alt="Bildschirmfoto 2023-06-16 um 06 42 19" src="https://github.com/antoniatandler/capstone-project/assets/128368770/baa2933d-2898-4117-b9f9-cd10bfab2eaa">
-
 
 ## Demo
 https://antonyoga.vercel.app/
@@ -45,6 +42,7 @@ $ npm run dev
 - React
 - Next.js
 - Styled-Components
+- REST-API
 
 ___
 
