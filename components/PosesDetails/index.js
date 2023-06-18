@@ -9,6 +9,7 @@ import {
   SubHeading,
 } from "../PosesList";
 import FavoriteHeart from "../FavoriteHeart";
+import { useState, useEffect } from "react";
 
 export const PoseDescription = styled.p`
   margin: 15px;
@@ -39,12 +40,32 @@ export const DetailsHeading = styled.h4`
   text-decoration: underline;
 `;
 
-export default function PosesDetails({ id }) {
+export default function PosesDetails({ id, _id }) {
   function getPoseById(id) {
     return poses.find((pose) => pose.id == id);
   }
 
   const pose = getPoseById(id);
+
+  // const [favorites, setFavorites] = useState([]);
+
+  // function toggleFavorite(_id) {
+  //   if (favorites.includes(_id)) {
+  //     setFavorites(favorites.filter((favoriteId) => favoriteId !== _id));
+  //   } else {
+  //     setFavorites([...favorites, _id]);
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   // Speichern der Favoriten im localStorage
+  //   localStorage.setItem("favorites", JSON.stringify(favorites));
+  // }, [favorites]);
+
+  // useEffect(() => {
+  //   // Laden der Favoriten aus dem localStorage beim Laden der Seite
+  //   localStorage.getItem("favorites");
+  // }, []);
 
   if (!pose) {
     return "...is Loading";
@@ -68,7 +89,10 @@ export default function PosesDetails({ id }) {
           <PoseDescription>{pose.pose_description}</PoseDescription>
           <DetailsHeading>how it blesses you:</DetailsHeading>
           <PoseBenefits>{pose.pose_benefits}</PoseBenefits>
-          <FavoriteHeart />
+          <FavoriteHeart
+          // isFavorite={favorites.includes(_id)}
+          // toggleFavorite={() => toggleFavorite(_id)}
+          />
         </PoseContainer>
       </PoseList>
       <Link href="../poses">

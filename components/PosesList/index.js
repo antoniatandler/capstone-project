@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { poses } from "@/public/lib/poses";
-import { useState } from "react";
-import FavoriteHeart from "../FavoriteHeart/index";
+import { useState, useEffect } from "react";
+import FavoriteHeart from "../FavoriteHeart";
+import Footer from "../Footer";
+import Heading from "../Heading";
 
 export const PoseContainer = styled.li`
   position: relative;
@@ -15,6 +17,7 @@ export const PoseContainer = styled.li`
   box-shadow: 17px 17px 23px -8px rgba(89, 49, 31, 0.52);
   padding: auto;
   z-index: 0;
+  margin: auto;
 `;
 
 export const PoseImage = styled.img`
@@ -49,7 +52,7 @@ export const SubHeading = styled.h3`
   padding-top: 20px;
 `;
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #59311f;
   cursor: pointer;
@@ -94,36 +97,65 @@ export default function PosesList() {
       sanskrit_name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const [favorites, setFavorites] = useState([]);
+
+  function toggleFavorite(english_name) {
+    if (favorites.includes(english_name)) {
+      setFavorites(
+        favorites.filter(
+          (favoriteEnglish_name) => favoriteEnglish_name !== english_name
+        )
+      );
+    } else {
+      setFavorites([...favorites, english_name]);
+    }
+  }
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    JSON.parse(localStorage.getItem("favorites"));
+  });
+  console.log(favorites);
+
   return (
-    <main>
-      <PosesHeading>ALL POSES</PosesHeading>
-      <SearchBarContainer>
-        <StyledInput
-          type="text"
-          placeholder="search for poses ..."
-          value={searchQuery}
-          onChange={handleSearchInputChange}
-        />
-      </SearchBarContainer>
-      <PoseList>
-        {filteredPoses.map(({ id, english_name, sanskrit_name, url_png }) => (
-          <PoseContainer>
-            <StyledLink href={`/poses/${id}`} key={id}>
-              <SubHeading>
-                {sanskrit_name}
-                <br />({english_name})
-              </SubHeading>
-              <PoseImage
-                src={url_png}
-                alt={english_name}
-                height={200}
-                width={200}
-              />
-            </StyledLink>
-            <FavoriteHeart />
-          </PoseContainer>
-        ))}
-      </PoseList>
-    </main>
+    <>
+      <main>
+        <PosesHeading>ALL POSES</PosesHeading>
+        <SearchBarContainer>
+          <StyledInput
+            type="text"
+            placeholder="search for poses ..."
+            value={searchQuery}
+            onChange={handleSearchInputChange}
+          />
+        </SearchBarContainer>
+        <PoseList>
+          {filteredPoses.map(
+            ({ id, _id, english_name, sanskrit_name, url_png }) => (
+              <PoseContainer key={id}>
+                <StyledLink href={`/poses/${id}`}>
+                  <SubHeading>
+                    {sanskrit_name}
+                    <br />({english_name})
+                  </SubHeading>
+                  <PoseImage
+                    src={url_png}
+                    alt={english_name}
+                    height={200}
+                    width={200}
+                  />
+                </StyledLink>
+                <FavoriteHeart
+                  key={english_name}
+                  isFavorite={favorites.includes(english_name)}
+                  toggleFavorite={() => toggleFavorite(english_name)}
+                />
+              </PoseContainer>
+            )
+          )}
+        </PoseList>
+      </main>
+      <Footer />
+    </>
   );
 }
