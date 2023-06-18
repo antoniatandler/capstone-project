@@ -42,7 +42,7 @@ const HeartIcon = styled.button`
   position: absolute;
   right: 30px;
   top: -15px;
-  color: #dbf3e1;
+  color: ${(props) => (props.isFavorite ? "#2b180f" : "#dbf3e1")};
   background-color: transparent;
   border: 0;
   font-size: 30px;
