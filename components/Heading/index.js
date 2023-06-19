@@ -18,6 +18,7 @@ const HeadingContainer = styled.header`
   background-color: #00a693;
   box-shadow: 0px 17px 13px -7px #00a693;
   margin-left: -15px;
+  z-index: 1;
 `;
 
 const HamburgerModel = styled.button`

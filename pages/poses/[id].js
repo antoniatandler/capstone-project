@@ -1,4 +1,4 @@
-import Heading from "@/components/Heading/Heading";
+import Heading from "@/components/Heading";
 import PosesDetails from "@/components/PosesDetails/index.js";
 import { useRouter } from "next/router";
 

@@ -1,18 +1,16 @@
-import Heading from "../Heading/Heading";
 import Link from "next/link";
 import styled from "styled-components";
 import { poses } from "@/public/lib/poses";
-import { PosesHeading, PoseList, PoseImage, SubHeading } from "../PosesList";
-
-export const PoseContainer = styled.li`
-  list-style: none;
-  text-align: center;
-  background-color: #dbb290;
-  border-radius: 15px;
-  padding-bottom: 20px;
-  height: fit-content;
-  box-shadow: 17px 17px 23px -8px rgba(89, 49, 31, 0.52);
-`;
+import {
+  PoseContainer,
+  PosesHeading,
+  PoseList,
+  PoseImage,
+  SubHeading,
+} from "../PosesList";
+import FavoriteHeart from "../FavoriteHeart";
+import { useState, useEffect } from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 export const PoseDescription = styled.p`
   margin: 15px;
@@ -50,6 +48,18 @@ export default function PosesDetails({ id }) {
 
   const pose = getPoseById(id);
 
+  const [favorites, setFavorites] = useLocalStorageState("favoritePoses", {
+    defaultValue: [],
+  });
+
+  function toggleFavorite(favorites, english_name) {
+    if (favorites.includes(english_name)) {
+      setFavorites(favorites.filter((favorite) => favorite !== english_name));
+    } else {
+      setFavorites([...favorites, english_name]);
+    }
+  }
+
   if (!pose) {
     return "...is Loading";
   }
@@ -57,7 +67,7 @@ export default function PosesDetails({ id }) {
     <main>
       <PosesHeading>POSE</PosesHeading>
       <PoseList>
-        <PoseContainer key={id}>
+        <PoseContainer key={pose.id}>
           <SubHeading>
             {pose.sanskrit_name}
             <br />({pose.english_name})
@@ -72,6 +82,11 @@ export default function PosesDetails({ id }) {
           <PoseDescription>{pose.pose_description}</PoseDescription>
           <DetailsHeading>how it blesses you:</DetailsHeading>
           <PoseBenefits>{pose.pose_benefits}</PoseBenefits>
+          <FavoriteHeart
+            key={pose.english_name}
+            isFavorite={favorites && favorites.includes(pose.english_name)}
+            toggleFavorite={() => toggleFavorite(favorites, pose.english_name)}
+          />
         </PoseContainer>
       </PoseList>
       <Link href="../poses">

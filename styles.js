@@ -14,5 +14,6 @@ export default createGlobalStyle`
     margin-top: 40px;
     padding: 15px;
     color: rgb(43, 24, 15);
+    
   }
 `;

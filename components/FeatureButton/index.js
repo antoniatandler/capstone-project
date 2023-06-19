@@ -14,8 +14,6 @@ export const FeatureButton = styled(Link)`
     if (variant == "primary") return "8px 12px 5px 12px";
     if (variant == "secondary") return "12px 12px 5px 12px";
   }};
-
-  //   margin: 5px;
   color: ${({ variant }) => {
     if (variant == "primary") return "#dbf3e1";
     if (variant == "secondary") return "rgb(43, 24, 15)";
