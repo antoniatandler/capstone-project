@@ -89,6 +89,7 @@ export default function PosesList() {
   const [favorites, setFavorites] = useLocalStorageState("favoritePoses", {
     defaultValue: [],
   });
+
   function handleSearchInputChange(event) {
     setSearchQuery(event.target.value);
   }

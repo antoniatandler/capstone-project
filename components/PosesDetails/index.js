@@ -10,6 +10,7 @@ import {
 } from "../PosesList";
 import FavoriteHeart from "../FavoriteHeart";
 import { useState, useEffect } from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 export const PoseDescription = styled.p`
   margin: 15px;
@@ -40,32 +41,24 @@ export const DetailsHeading = styled.h4`
   text-decoration: underline;
 `;
 
-export default function PosesDetails({ id, _id }) {
+export default function PosesDetails({ id }) {
   function getPoseById(id) {
     return poses.find((pose) => pose.id == id);
   }
 
   const pose = getPoseById(id);
 
-  // const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useLocalStorageState("favoritePoses", {
+    defaultValue: [],
+  });
 
-  // function toggleFavorite(_id) {
-  //   if (favorites.includes(_id)) {
-  //     setFavorites(favorites.filter((favoriteId) => favoriteId !== _id));
-  //   } else {
-  //     setFavorites([...favorites, _id]);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   // Speichern der Favoriten im localStorage
-  //   localStorage.setItem("favorites", JSON.stringify(favorites));
-  // }, [favorites]);
-
-  // useEffect(() => {
-  //   // Laden der Favoriten aus dem localStorage beim Laden der Seite
-  //   localStorage.getItem("favorites");
-  // }, []);
+  function toggleFavorite(favorites, english_name) {
+    if (favorites.includes(english_name)) {
+      setFavorites(favorites.filter((favorite) => favorite !== english_name));
+    } else {
+      setFavorites([...favorites, english_name]);
+    }
+  }
 
   if (!pose) {
     return "...is Loading";
@@ -74,7 +67,7 @@ export default function PosesDetails({ id, _id }) {
     <main>
       <PosesHeading>POSE</PosesHeading>
       <PoseList>
-        <PoseContainer key={id}>
+        <PoseContainer key={pose.id}>
           <SubHeading>
             {pose.sanskrit_name}
             <br />({pose.english_name})
@@ -90,8 +83,9 @@ export default function PosesDetails({ id, _id }) {
           <DetailsHeading>how it blesses you:</DetailsHeading>
           <PoseBenefits>{pose.pose_benefits}</PoseBenefits>
           <FavoriteHeart
-          // isFavorite={favorites.includes(_id)}
-          // toggleFavorite={() => toggleFavorite(_id)}
+            key={pose.english_name}
+            isFavorite={favorites && favorites.includes(pose.english_name)}
+            toggleFavorite={() => toggleFavorite(favorites, pose.english_name)}
           />
         </PoseContainer>
       </PoseList>
