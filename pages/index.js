@@ -12,6 +12,10 @@ export default function HomePage() {
         <FeatureButton variant="primary" href="/poses">
           all yoga poses
         </FeatureButton>
+        <br />
+        <FeatureButton variant="primary" href="/poses/bookmarks">
+          your fav yoga poses
+        </FeatureButton>
       </Features>
     </>
   );

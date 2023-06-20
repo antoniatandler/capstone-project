@@ -93,6 +93,11 @@ export default function Heading() {
             <TbYoga size={16} />
           </FeatureButton>
         </MenuItem>
+        <MenuItem>
+          <FeatureButton variant="secondary" href="/poses/bookmarks" size={16}>
+            ♥️
+          </FeatureButton>
+        </MenuItem>
       </DropdownMenu>
     </>
   );
